@@ -8,6 +8,8 @@ import MyContent from './Components/MyContent';
 import Subscribers from './Components/Subscribers';
 import Login from './Components/Login';
 import Register from './Components/Register';
+import store from './Redux/Store';
+import {Provider} from 'react-redux'
 
 function App() {
   const appRouter = createBrowserRouter([{
@@ -48,9 +50,9 @@ function App() {
   }
 ])
   return (
-    <div className="App">
+    <Provider store={store}>
       <RouterProvider router={appRouter}/>
-    </div>
+    </Provider>
   );
 }
 
