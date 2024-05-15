@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from "../assets/logo.jpg"
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -9,8 +10,8 @@ const Header = () => {
             </div>
             <div><input className='border w-96 p-2' placeholder='search'/><button className='bg-purple-500 rounded-sm p-2 ml-2'>Search</button></div>
             <div>
-                <button>Login</button>
-                <button className='bg-purple-500 rounded-sm p-2 ml-4'>Sign Up</button>
+                <button><Link to="/login">Login</Link></button>
+                <button className='bg-purple-500 rounded-sm p-2 ml-4'><Link to="/register"> Sign Up</Link></button>
             </div>
         </div>
     );
