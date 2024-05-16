@@ -16,8 +16,8 @@ const Home = () => {
         {isGridView ? (
           <img
             width={36}
-            src={grid}
-            alt="grid"
+            src={list}
+            alt="list"
             onClick={() => {
               setGridView(false);
             }}
@@ -25,8 +25,8 @@ const Home = () => {
         ) : (
           <img
             width={36}
-            alt="list"
-            src={list}
+            alt="grid"
+            src={grid}
             onClick={() => {
               setGridView(true);
             }}
