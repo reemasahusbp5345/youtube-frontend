@@ -111,8 +111,9 @@ const Register = () => {
               Sign up
             </button>
           </div>
-          <div className='p-1 m-1 underline flex justify-center'><Link to="/login">Already registered!!! Sign In</Link></div>
-
+          <div className="p-1 m-1 underline flex justify-center">
+            <Link to="/login">Already registered!!! Sign In</Link>
+          </div>
         </form>
       </div>
     </div>
