@@ -11,45 +11,55 @@ import Register from "./Components/Register";
 import store from "./Redux/Store";
 import { Provider } from "react-redux";
 import ProtectedRoute from "./utils/ProtectedRoute";
+import VideoDetail from "./Components/VideoDetail";
 
 function App() {
   const appRouter = createBrowserRouter([
     {
-      path: '/',
+      path: "/",
       element: <Layout />,
       children: [
         {
-          path: '/',
+          path: "/",
           element: <Home />,
         },
         {
-          path: '/history',
-          element: <ProtectedRoute redirectTo="/history"><History /></ProtectedRoute>,
-        },
-        {
-          path: '/collections',
-          element: <ProtectedRoute redirectTo="/collections"><Collections /></ProtectedRoute>,
-        },
-        {
-          path: '/likedVideos',
-          element: <ProtectedRoute redirectTo="/likedVideos"><LikedVideos /></ProtectedRoute>,
-        },
-        {
-          path: '/myContent',
-          element: <ProtectedRoute redirectTo="/myContent"><MyContent /></ProtectedRoute>,
-        },
-        {
-          path: '/subscribers',
-          element: <ProtectedRoute redirectTo="/subscribers"><Subscribers /></ProtectedRoute>,
+          element: <ProtectedRoute />,
+          children: [
+            {
+              path: "/:id",
+              element: <VideoDetail />,
+            },
+            {
+              path: "/history",
+              element: <History />,
+            },
+            {
+              path: "/collections",
+              element: <Collections />,
+            },
+            {
+              path: "/likedVideos",
+              element: <LikedVideos />,
+            },
+            {
+              path: "/myContent",
+              element: <MyContent />,
+            },
+            {
+              path: "/subscribers",
+              element: <Subscribers />,
+            },
+          ],
         },
       ],
     },
     {
-      path: '/login',
+      path: "/login",
       element: <Login />,
     },
     {
-      path: '/register',
+      path: "/register",
       element: <Register />,
     },
   ]);

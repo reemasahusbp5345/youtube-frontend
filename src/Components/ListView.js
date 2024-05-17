@@ -1,11 +1,12 @@
 import React from 'react';
 import VideoPlayer from './VideoPlayer';
+import { Link } from 'react-router-dom';
 
 const ListView = ({videoList}) => {
     return (
         <div  className="  p-2">
       {videoList?.map((video) => (
-        <div key={video?._id} className="flex m-4">
+        <Link to={video?._id} key={video?._id} className="flex m-4">
           <div className='w-1/3'>
           <VideoPlayer videoFile={video?.videoFile} thumbnail={video?.thumbnail}/>
           </div>
@@ -22,7 +23,7 @@ const ListView = ({videoList}) => {
             </div>
             <div>{video?.description}</div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
     );

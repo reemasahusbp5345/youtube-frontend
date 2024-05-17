@@ -1,11 +1,13 @@
 import React from "react";
 import VideoPlayer from "./VideoPlayer";
+import { Link } from "react-router-dom";
 
 const GridView = ({videoList}) => {
   return (
     <div  className="flex flex-wrap p-2">
       {videoList?.map((video) => (
-        <div key={video?._id} className="flex m-2  w-[31%] flex-col">
+        <Link to={video?._id}  key={video?._id} className="flex m-2  w-[31%] flex-col"> 
+        
           <VideoPlayer videoFile={video?.videoFile} thumbnail={video?.thumbnail}/>
            <div className="flex m-1">
             <img
@@ -19,7 +21,8 @@ const GridView = ({videoList}) => {
               <h4>{video?.owner?.username}</h4>
             </div>
           </div>
-        </div>
+         
+        </Link>
       ))}
     </div>
   );
